@@ -9,14 +9,14 @@ pipeline {
             }
         }
         
+        stages {
         stage('Build Docker Image') {
             steps {
-                script {
-                    // Build the Docker image
-                    sh 'docker build -t my-nginx-app .'
-                }
+                sh 'docker --version'
+                sh 'docker build -t my-nginx-app .'
             }
         }
+    }
         
         stage('Run Container') {
             steps {
